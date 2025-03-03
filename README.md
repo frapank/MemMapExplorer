@@ -1,24 +1,38 @@
+# 🛠️ MemDumper ![Linux](https://img.shields.io/badge/Platform-Linux-only-blue) ![Alpha](https://img.shields.io/badge/Status-Alpha-red)
 
----
-
-# 🛠️ MemDumper
-
-**MemDumper** is a utility to dump files used by any application in Linux. It relies on the `/proc/` directory, which is native to Linux, to obtain this information.
-( This program is not complete and is still in the alpha stage. )
-
-## 🚀 Usage
-
-To use the application, you will need to know the PID of the program you wish to dump. Once you have the PID, you can run the following command: 
-```bash
-$ ./dumper -p <pid> -f <input>
-```
-
-### 🖼️ Screenshot
+**MemDumper** is an utility for analyzing Linux process memory using the native /proc/ interface. It provides an interactive view of memory maps and loaded libraries.
 
 ![Screenshot](screenshot.png)
 
-## 🤝 Support
+## ✨ Features
+- 🖥️ Interactive ncurses interface
+- 📊 Structured memory map visualization
+- 🎨 Color scheme
+- 📁 Keyboard navigation support
 
-Have questions or need help? You can find my contact information on my profile page. Happy to help!
+## 📦 Prerequisites
+- Linux system (kernel 4.4+)
+- Ncurses library
 
----
+## 🚀 Prerequisites
+```bash
+# Clone the repository
+https://github.com/frapank/linux-process-dumper-gui.git
+cd MemDumper
+
+# Compile the project
+mkdir build && cd build
+cmake .. && make
+
+# Run the application
+./MemDumper -p <PID> [-f <filter>]
+```
+## 🕹️ Usage
+| Option  | Description                | 	Example                 |
+|---------|----------------------------|--------------------------|
+| `-p`    | 	Specify the target PID    | `-p 1234`               |
+| `-f`    |   Filter results (optional) | `-f "libc"`             |
+
+Interface navigation:
+- ↑/↓: List scrolling
+- `Q`: Exit the program
