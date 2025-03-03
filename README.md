@@ -17,15 +17,15 @@
 ## 🚀 Prerequisites
 ```bash
 # Clone the repository
-https://github.com/frapank/linux-process-dumper-gui.git
-cd MemDumper
+git clone https://github.com/frapank/linux-process-dumper-gui.git
+cd linux-process-dumper-gui
 
 # Compile the project
-mkdir build && cd build
-cmake .. && make
+cmake CMakeLists.txt
+make
 
 # Run the application
-./MemDumper -p <PID> [-f <filter>]
+./dumper -p <PID> [-f <filter>]
 ```
 ## 🕹️ Usage
 | Option  | Description                | 	Example                 |
