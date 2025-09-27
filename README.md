@@ -4,7 +4,6 @@
 
 ![Screenshot](screenshot.png)
 
-
 ## Features
 
 * **Interactive interface** with keyboard navigation
@@ -25,8 +24,8 @@ Before building or running MemMapExplorer, ensure the following dependencies are
 
 ```bash
 # Clone the repository
-git clone https://github.com/frapank/linux-process-dumper-gui.git
-cd linux-process-dumper-gui
+git clone https://github.com/frapank/MemMapExplorer.git
+cd MemMapExplorer
 
 # Create build directory
 mkdir build && cd build
