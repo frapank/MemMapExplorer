@@ -45,12 +45,6 @@ std::expected<void, std::string> StringGui::loadProgramStrings() {
 
 std::expected<Gui::ReturnSignal, std::string> StringGui::handleKeys(int ch) {
     switch (ch) {
-        case 'q':
-            return EXIT_SIG;
-            break;
-        case '\t':
-            return NEXT_SIG;
-            break;
         case KEY_UP:
         case 'k':
             if (currentLine_ > 0) currentLine_--;
