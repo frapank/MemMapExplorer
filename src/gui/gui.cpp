@@ -16,9 +16,8 @@ void Gui::handleResize() {
 
 std::expected<void, std::string> Gui::init() {
 
-    if (const auto check = onRun(); !check) {
+    if (const auto check = onRun(); !check)
         return std::unexpected(check.error());
-    }
 
     if (has_colors()) {
         start_color();
@@ -28,20 +27,39 @@ std::expected<void, std::string> Gui::init() {
     return {};
 }
 
+std::expected<Gui::ReturnSignal, std::string> Gui::defaultHandleKeys(char ch) {
+    // Default
+    switch (ch) {
+        case 'q':
+            return EXIT_SIG;
+            break;
+        case '\t':
+            return NEXT_SIG;
+            break;
+    }
+    // Inject
+    if (const auto check = handleKeys(ch); !check) 
+        return std::unexpected(check.error());
+    else 
+        return check.value();
+    
+    return CONTINUE_SIG;
+}
+
 std::expected<Gui::ReturnSignal, std::string> Gui::render() {
     erase();
     createBox();
-    if (const auto check = beforeRefresh(); !check) {
+    if (const auto check = beforeRefresh(); !check) 
         return std::unexpected(check.error());
-    }
+    
     refresh();
 
     const int ch{getch()};
-    if (const auto check = handleKeys(ch); !check) {
+    if (const auto check = defaultHandleKeys(ch); !check) 
         return std::unexpected(check.error());
-    } else {
+    else 
         return check.value();
-    }
+    
 }
 
 void Gui::initColors() const {
