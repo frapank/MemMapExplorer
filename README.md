@@ -1,4 +1,14 @@
-# MemMapExplorer ![Release](https://img.shields.io/badge/Status-Release-blue)  ![Version](https://img.shields.io/badge/Version-2.0-yellow)
+<div align="center">
+
+# MemMapExplorer
+
+**A utility for inspecting process memory**
+
+[![C++](https://img.shields.io/badge/C%2B%2B-23-00599C?style=flat-square&logo=cplusplus)](https://en.wikipedia.org/wiki/C%2B%2B17)
+[![Status](https://img.shields.io/badge/status-release-%20green?style=flat-square)](#status)
+[![License](https://img.shields.io/badge/license-GPL--3.0-blue?style=flat-square)](LICENSE)
+
+</div>
 
 **MemMapExplorer** is a Linux utility for inspecting and visualizing process memory maps via the native `/proc/` interface. It provides an **interactive terminal-based interface** to explore loaded libraries, memory segments, and mappings, with filtering and navigation capabilities.
 
@@ -10,7 +20,6 @@
 * **Structured memory map visualization** for processes
 * **Filter loaded modules** by name
 * **Option to show full path** or only filenames
-
 
 ## Prerequisites
 
@@ -47,15 +56,6 @@ make
 | `-p`   | Specify the target PID                        | `-p 1234`   |
 | `-f`   | Filter modules by substring                   | `-f "libc"` |
 | `-a`   | Show full file paths (default: filename only) | `-a`        |
-
-**Keyboard navigation inside the interface:**
-
-* `↑ / k` → Scroll up  
-* `↓ / j` → Scroll down  
-* `q`     → Quit the interface  
-* `r`     → Reload  
-* `p`     → Toggle paths
-* `/`     → Change filter  
 
 ## Testing
 
