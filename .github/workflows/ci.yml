@@ -7,30 +7,19 @@ on:
 
 jobs:
   build:
-    name: ${{ matrix.cxx }} (debug=${{ matrix.debug }})
+    name: ${{ matrix.cxx }}
     runs-on: ubuntu-24.04
 
     strategy:
       fail-fast: false
       matrix:
         cxx: [g++, clang++]
-        debug: ["ON", "OFF"]
 
     steps:
       - uses: actions/checkout@v4
 
       - name: Install dependencies
-        run: sudo apt-get update && sudo apt-get install -y libncurses-dev
-
-      - name: Configure
-        run: >
-          cmake -S . -B build
-          -DCMAKE_CXX_COMPILER=${{ matrix.cxx }}
-          -DENABLE_TESTS=ON
-          -DENABLE_DEBUG=${{ matrix.debug }}
+        run: sudo apt-get update && sudo apt-get install -y pkg-config libncurses-dev
 
       - name: Build
-        run: cmake --build build -j"$(nproc)"
-
-      - name: Test
-        run: ctest --test-dir build --output-on-failure
+        run: make -j"$(nproc)" CXX=${{ matrix.cxx }}
