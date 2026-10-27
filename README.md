@@ -46,7 +46,7 @@ cmake ..
 make
 
 # Run the application
-./dumper -p <PID> [-f <filter>] [-a]
+./mmx -p <PID> [-f <filter>] [-a]
 ```
 
 ## Usage
