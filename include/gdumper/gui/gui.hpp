@@ -56,7 +56,7 @@ class Gui {
     virtual std::expected<void, std::string> beforeRefresh() = 0;
 
     // Gui basic functions
-    std::expected<ReturnSignal, std::string> defaultHandleKeys(char ch);
+    std::expected<ReturnSignal, std::string> defaultHandleKeys(int ch);
     void handleResize();
     void initColors() const;
     void drawFooter() const;
