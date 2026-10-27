@@ -27,7 +27,7 @@ std::expected<void, std::string> Gui::init() {
     return {};
 }
 
-std::expected<Gui::ReturnSignal, std::string> Gui::defaultHandleKeys(char ch) {
+std::expected<Gui::ReturnSignal, std::string> Gui::defaultHandleKeys(int ch) {
     // Default
     switch (ch) {
         case 'q':
