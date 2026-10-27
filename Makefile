@@ -12,7 +12,7 @@ INCLUDE		:= include
 BUILD		:= build
 
 
-NAME		:= MemMapExplorer
+NAME		:= mmx
 OUTPUT		:= $(BUILD)/$(NAME)
 
 SOURCES		:= $(shell find $(SRC) -type f -name "*.cpp")

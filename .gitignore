@@ -2,7 +2,7 @@
 build/
 .vscode/
 
-MemMapExplorer
+mmx
 *.o
 *.so
 *.a
