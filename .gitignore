@@ -1,12 +1,8 @@
 .cache/
 build/
 .vscode/
-CMakeCache.txt
-CMakeFiles/
-cmake_install.cmake
-Makefile
 
-dumper
+MemMapExplorer
 *.o
 *.so
 *.a
