@@ -1,4 +1,4 @@
-CXX			:= g++
+CXX			?= g++
 
 PKGS		:= ncurses
 PKGS_FLAGS	:= $(shell pkg-config --cflags $(PKGS))
